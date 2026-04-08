@@ -1,0 +1,13 @@
+# 忽略数据集（你的核心需求）
+ultralytics/data/
+
+# 权重文件
+*.pt
+*.pth
+
+# 训练输出
+runs/
+
+# Python缓存
+__pycache__/
+*.pyc
