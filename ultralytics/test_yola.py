@@ -2,7 +2,7 @@
 from ultralytics import YOLO
 
 # ===== 1. 加载训练好的权重 =====
-model = YOLO("/home/dell/ymd/YGFNet/runs/detect/yola_exdark_xxx/weights/best.pt")
+model = YOLO("/home/dell/ymd/YGFNet/runs/yola_exdark_20260410_052658/weights/best.pt")
 
 # ===== 2. 在测试集上评估 =====
 metrics = model.val(

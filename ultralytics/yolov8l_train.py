@@ -1,26 +1,30 @@
+# train_yolov8l.py
 from ultralytics import YOLO
 import datetime
-from yola_trainer import YOLATrainer
 
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
-model = YOLO("/home/dell/ymd/YGFNet/ultralytics/ultralytics/models/yolav8.yaml")
+# ===== 1. 加载 YOLOv8l =====
+model = YOLO("yolov8l.yaml")   # ⚠️ 用官方结构
 
+print(model.info())
+
+# ===== 2. 训练 =====
 model.train(
     data="/home/dell/ymd/YGFNet/ultralytics/datasets/exdark.yaml",
     epochs=220,
     imgsz=640,
-    batch=8,
-    multi_scale=0.1,
-    close_mosaic=15,
+    batch=2,
+    multi_scale=0.2,
+    close_mosaic=10,
     optimizer="AdamW",
     lr0=0.001,
-    cache=False,
+    cache=True,
     workers=8,
     device=0,
-    ii=5.0,
-    ii_warmup=10,
-    trainer=YOLATrainer,
+
+
+
     project="/home/dell/ymd/YGFNet/runs",
-    name=f"yola_exdark_{timestamp}",
+    name=f"yolov8l_exdark_{timestamp}",
 )

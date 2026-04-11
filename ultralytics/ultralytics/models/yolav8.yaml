@@ -1,8 +1,3 @@
-# ultralytics/cfg/models/v8/yolov8n_yola.yaml
-# Ultralytics AGPL-3.0 License - https://ultralytics.com/license
-
-# YOLOv8 object detection model with P3/8 - P5/32 outputs
-# Custom version with YOLAConv as the first stage
 
 nc: 12
 
